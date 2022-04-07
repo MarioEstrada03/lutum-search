@@ -5,7 +5,6 @@ import bestbuy from './api/bestbuy'
 import './Styles/results.css'
 
 
-
 function Home() {
   const [results, setResults] = useState([]);
   const [input, setInput] = useState("");
