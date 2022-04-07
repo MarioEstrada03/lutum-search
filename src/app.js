@@ -13,7 +13,11 @@ app.get('/', (request, response) => response.send('Hello World!'))
 
 // Define external routes/subroutes
 const search = require('./routes/search')
-app.use('/search', search)
+// app.use('/search', search)
+
+if (process.env.NODE_ENV === ‘production’) {
+    app.use(express.static(‘client/build’))
+    }
 
 app.listen(process.env.PORT || 5000)
 
