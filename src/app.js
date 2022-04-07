@@ -16,6 +16,10 @@ const search = require('./routes/search')
 const port = process.env.PORT || 5000; //xxx
 app.use('/search', search)
 
+app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, 'client/build/index.html'))
+})
+
 app.listen(process.env.PORT || 5000) ///xxx
 
 // app.listen(5000, () => {
