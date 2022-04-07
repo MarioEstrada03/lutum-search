@@ -13,6 +13,8 @@ app.get('/', (request, response) => response.send('Hello World!'))
 
 // Define external routes/subroutes
 const search = require('./routes/search')
+
+const port = process.env.PORT || 5000; //xxx
 app.use('/search', search)
 
 app.listen(process.env.PORT || 5000)
